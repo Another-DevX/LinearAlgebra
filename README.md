@@ -19,8 +19,4 @@ This repository serves as a comprehensive collection of computational tools, alg
 
 ## Contributing
 
-We welcome contributions! Please see the CONTRIBUTING file for details.
-
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for details.
+We welcome contributions!
