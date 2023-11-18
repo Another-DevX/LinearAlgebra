@@ -61,7 +61,3 @@ if __name__ == '__main__':
     main()
 ```
 
-```python
-if __name__ == '__main__':
-    main()
-```
