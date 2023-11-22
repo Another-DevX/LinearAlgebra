@@ -1,12 +1,9 @@
 mod interact;
-use interact::print_matrix;
+use interact::{print_matrix, create_matrix};
 
 fn main() {
-    let mut matrix: Vec<Vec<f32>> = vec![
-        vec![1., 2., 3., 4.],
-        vec![2., 4., 6., 8.],
-        vec![3., 5., 7., 9.],
-    ];
+
+    let matrix = create_matrix();
     print_matrix(&matrix);
     let matrix = jordan_gauss_elimination(matrix);
     match matrix {
