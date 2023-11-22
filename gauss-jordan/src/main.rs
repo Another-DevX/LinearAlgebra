@@ -6,14 +6,16 @@ fn main() {
         vec![1., 2., 3., 4.],
         vec![2., 4., 6., 8.],
         vec![3., 5., 7., 9.],
-        vec![6., 10., 14., 20.],
     ];
     print_matrix(&matrix);
     let matrix = jordan_gauss_elimination(matrix);
-    print_matrix(&matrix);
+    match matrix {
+        Ok(matrix) => print_matrix(&matrix),
+        Err(e) => println!("{}", e),
+    }
 }
 
-fn jordan_gauss_elimination(mut matrix: Vec<Vec<f32>>) -> Vec<Vec<f32>> {
+fn jordan_gauss_elimination(mut matrix: Vec<Vec<f32>>) -> Result<Vec<Vec<f32>>, String> {
     let n_rows = matrix.len();
     let m_cols = matrix[0].len();
 
@@ -30,8 +32,8 @@ fn jordan_gauss_elimination(mut matrix: Vec<Vec<f32>>) -> Vec<Vec<f32>> {
             if i != diagonal {
                 let factor = matrix[i][diagonal];
                 for j in 0..m_cols {
-                    if matrix[i][j] != 0. && j == m_cols - 1 {
-                        panic!("inconsistent system")
+                    if matrix[i][j] != 0. && j == m_cols - 1 && degenerated {
+                        return Err("Inconsistent system".to_string());
                     } else if matrix[i][j] != 0. {
                         degenerated = false;
                     }
@@ -46,7 +48,7 @@ fn jordan_gauss_elimination(mut matrix: Vec<Vec<f32>>) -> Vec<Vec<f32>> {
             .count()
             .cmp(&a.iter().filter(|&&x| x != 0.).count())
     });
-    matrix
+    Ok(matrix)
 }
 
 fn swap_with_nonzero_row(matrix: &mut Vec<Vec<f32>>, row_index: usize) {
