@@ -23,13 +23,13 @@ El programa facilita la resolución de sistemas de ecuaciones lineales aplicando
 1. **Iniciar el Programa:** Ejecute el programa y espere a que solicite el tamaño de la matriz.
 
 2. **Ingresar Tamaño de la Matriz:**
-   - Ingrese el tamaño \( n \) para una matriz cuadrada de \( n \times n \).
-   - Incluya una columna adicional para la matriz extendida del sistema \( Ax = b \).
+   - Ingrese el tamaño $( n \)$ para una matriz cuadrada de $(n \times n)$.
+   - Incluya una columna adicional para la matriz extendida del sistema $( Ax = b \)$.
 
 3. **Introducir los Elementos de la Matriz:**
    - Ingrese los valores de cada fila, separados por espacios.
    - Incluya los valores de la matriz extendida al final de cada fila.
-   - Ejemplo: para una matriz \( 3 \times 3 \) con matriz extendida, ingrese 4 valores por fila.
+   - Ejemplo: para una matriz $( 3 \times 3 \)$ con matriz extendida, ingrese 4 valores por fila.
 
 4. **Visualización y Procesamiento:**
    - Tras ingresar todas las filas, se mostrará la matriz.
@@ -43,23 +43,23 @@ El programa facilita la resolución de sistemas de ecuaciones lineales aplicando
 
 Para resolver el sistema:
 
-\[ 
-\begin{align*}
-x + 2y + 3z &= 4 \\
-2x + 4y + 6z &= 8 \\
+ 
+$$\begin{align*}
+x + 2y + 3z &= 4 \\\
+2x + 4y + 6z &= 8 \\\
 3x + 5y + 7z &= 9 
 \end{align*}
-\]
+\$$
 
 La entrada sería:
 
-$: Tamaño de la matriz (n x n):
+- Tamaño de la matriz (n x n):
 3
-$: Ingrese la fila 1 (separada por espacios), recuerde añadir el valor de la matriz extendida:
+- Ingrese la fila 1 (separada por espacios), recuerde añadir el valor de la matriz extendida:
 1 2 3 4
-$: Ingrese la fila 2 (separada por espacios), recuerde añadir el valor de la matriz extendida:
+- Ingrese la fila 2 (separada por espacios), recuerde añadir el valor de la matriz extendida:
 2 4 6 8
-$: Ingrese la fila 3 (separada por espacios), recuerde añadir el valor de la matriz extendida:
+- Ingrese la fila 3 (separada por espacios), recuerde añadir el valor de la matriz extendida:
 3 5 7 9
 
 El programa procesará la matriz y mostrará el resultado en su forma escalonada reducida.
