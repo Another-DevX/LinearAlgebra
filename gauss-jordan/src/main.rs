@@ -25,16 +25,13 @@ fn jordan_gauss_elimination(mut matrix: Vec<Vec<f32>>) -> Result<Vec<Vec<f32>>, 
             matrix = pivote(matrix, diagonal, diagonal);
         }
         for i in 0..n_rows {
-            let mut degenerated = true;
             if i != diagonal {
                 let factor = matrix[i][diagonal];
                 for j in 0..m_cols {
-                    if matrix[i][j] != 0. && j == m_cols - 1 && degenerated {
-                        return Err("Inconsistent system".to_string());
-                    } else if matrix[i][j] != 0. {
-                        degenerated = false;
-                    }
                     matrix[i][j] -= matrix[diagonal][j] * factor;
+                }
+                if matrix[i][..m_cols-1].iter().all(|&x| x == 0.0) && matrix[i][m_cols-1] != 0.0 {
+                    return Err("Inconsistent system".to_string());
                 }
             }
         }
